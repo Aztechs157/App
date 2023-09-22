@@ -11,7 +11,7 @@ export function Base({ children }: Html.PropsWithChildren) {
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Library157</title>
+                <title>App 157</title>
                 <link rel="icon" href="data:," />
                 <script
                     src="https://unpkg.com/htmx.org@1.9.6"
