@@ -94,13 +94,35 @@ interface LoginProps {
 
 function Login({ invalid }: LoginProps) {
     return (
-        <>
+        <div class="grid place-items-center w-screen h-screen bg-blue-300">
             {invalid && <p>Invalid email or password</p>}
-            <form method="POST">
-                <input type="email" name="email" />
-                <input type="password" name="password" />
-                <input type="submit" />
+            <form method="POST" class="flex flex-col w-1/3 bg-white rounded-lg p-10 border-black border gap-6">
+                <Input type="email" name="email">
+                    Email:
+                </Input>
+                <Input type="password" name="password">
+                    Password:
+                </Input>
+                <input
+                    type="submit"
+                    value="Login"
+                    class="bg-blue-300 hover:bg-blue-500 hover:text-white m-auto py-2 px-10 border-black border rounded-md"
+                />
             </form>
-        </>
+        </div>
+    );
+}
+
+interface InputProps {
+    type: 'text' | 'email' | 'password';
+    name: string;
+    id?: string;
+}
+function Input({ type, children, name, id = name }: Html.PropsWithChildren<InputProps>) {
+    return (
+        <div class="flex flex-col gap-1">
+            <label for={id}>{children}</label>
+            <input type={type} name={name} id={id} class="border border-black rounded-md bg-blue-50" />
+        </div>
     );
 }

@@ -86,7 +86,7 @@ function Signup({ emailExists }: SignupProps) {
             <input type="password" name="password" />
             <input type="text" name="name" />
             <input type="text" name="pronouns" />
-            <input type="submit" />
+            <input type="submit" value="Signup" />
         </form>
     );
 }

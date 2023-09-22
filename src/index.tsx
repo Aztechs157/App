@@ -31,12 +31,14 @@ const app = new Elysia()
 
             return (
                 <Base>
-                    <a href="/login">Login</a>
-                    <br />
-                    <a href="/logout">Logout</a>
-                    <br />
-                    <a href="/signup">Signup</a>
-                    <h1 safe>{content}</h1>
+                    <nav class="flex w-1/2 justify-between">
+                        <a href="/login">Login</a>
+                        <a href="/logout">Logout</a>
+                        <a href="/signup">Signup</a>
+                    </nav>
+                    <h1 safe class="text-xl font-bold">
+                        {content}
+                    </h1>
                 </Base>
             );
         },
