@@ -48,7 +48,16 @@ export const signup = new Elysia()
                 );
             }
 
-            const session = await db.session.create({ data: { member: { create: body } } });
+            const session = await db.session.create({
+                data: {
+                    member: {
+                        create: {
+                            ...body,
+                            password: await Bun.password.hash(body.password),
+                        },
+                    },
+                },
+            });
             cookie.session.value = session.id;
             set.redirect = '/';
         },

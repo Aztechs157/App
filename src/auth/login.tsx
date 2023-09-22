@@ -38,12 +38,22 @@ export const login = new Elysia()
                 await db.session.delete({ where: { id: cookie.session.value } }).catch();
             }
 
-            const member = await db.member.findFirst({ where: body });
+            const member = await db.member.findUnique({ where: { email: body.email } });
             if (!member) {
                 set.status = 'Forbidden';
                 return (
                     <Base>
-                        <Login invalidEmail />
+                        <Login invalid />
+                    </Base>
+                );
+            }
+
+            const isCorrectPassword = await Bun.password.verify(body.password, member.password);
+            if (!isCorrectPassword) {
+                set.status = 'Forbidden';
+                return (
+                    <Base>
+                        <Login invalid />
                     </Base>
                 );
             }
@@ -79,13 +89,13 @@ export const login = new Elysia()
     );
 
 interface LoginProps {
-    invalidEmail?: boolean;
+    invalid?: boolean;
 }
 
-function Login({ invalidEmail }: LoginProps) {
+function Login({ invalid }: LoginProps) {
     return (
         <>
-            {invalidEmail && <p>Email does not exist</p>}
+            {invalid && <p>Invalid email or password</p>}
             <form method="POST">
                 <input type="email" name="email" />
                 <input type="password" name="password" />
