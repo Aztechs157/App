@@ -1,7 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# dev database
 dev.db
 dev.db-journal
+
+# from build step
+/public/index.css
 
 # dependencies
 /node_modules

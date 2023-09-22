@@ -17,6 +17,7 @@ export function Base({ children }: Html.PropsWithChildren) {
                     integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
                     crossorigin="anonymous"
                 ></script>
+                <link rel="stylesheet" href="./index.css" />
             </head>
             <body>{children}</body>
         </html>

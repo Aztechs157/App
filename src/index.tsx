@@ -1,5 +1,6 @@
 import { Elysia, t } from 'elysia';
 import { html } from '@elysiajs/html';
+import { staticPlugin } from '@elysiajs/static';
 import { PrismaClient } from '@prisma/client';
 import { auth } from './auth';
 import { Base } from './base';
@@ -10,6 +11,11 @@ const app = new Elysia()
     .use(
         html({
             autoDoctype: 'full',
+        }),
+    )
+    .use(
+        staticPlugin({
+            prefix: '',
         }),
     )
     .use(auth)
