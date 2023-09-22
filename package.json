@@ -2,15 +2,19 @@
   "name": "library157",
   "version": "0.0.0",
   "scripts": {
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.tsx"
   },
   "dependencies": {
+    "@elysiajs/html": "^0.7.0",
+    "@kitajs/html": "^2.2.2",
     "@prisma/client": "5.3.1",
     "elysia": "^0.7.12"
   },
   "devDependencies": {
+    "@kitajs/ts-html-plugin": "^1.0.2",
     "bun-types": "^1.0.3",
-    "prisma": "^5.3.1"
+    "prisma": "^5.3.1",
+    "typescript": "^5.2.2"
   },
   "module": "src/index.js"
 }

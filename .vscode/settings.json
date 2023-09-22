@@ -12,5 +12,7 @@
     "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"
     },
-    "cSpell.words": ["elysiajs"]
+    "cSpell.words": ["elysiajs"],
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true
 }
