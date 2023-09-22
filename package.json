@@ -1,6 +1,7 @@
 {
     "name": "library157",
     "version": "0.0.0",
+    "module": "src/index.tsx",
     "scripts": {
         "dev": "bun run --watch src/index.tsx"
     },
@@ -15,6 +16,5 @@
         "bun-types": "^1.0.3",
         "prisma": "^5.3.1",
         "typescript": "^5.2.2"
-    },
-    "module": "src/index.js"
+    }
 }
