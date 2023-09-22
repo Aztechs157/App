@@ -1,15 +1,14 @@
 {
-  "name": "library157",
-  "version": "1.0.50",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
-  },
-  "dependencies": {
-    "elysia": "latest"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+    "name": "library157",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "bun run --watch src/index.ts"
+    },
+    "dependencies": {
+        "elysia": "^0.7.12"
+    },
+    "devDependencies": {
+        "bun-types": "^1.0.3"
+    },
+    "module": "src/index.js"
 }
