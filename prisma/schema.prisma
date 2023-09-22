@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+model Member {
+    id       String @id @default(cuid())
+    email    String @unique
+    name     String
+    pronouns String
+
+    sessions Session[]
+
+    joinedAt  DateTime @default(now()) @map("createdAt")
+    updatedAt DateTime @updatedAt
+}
+
+model Session {
+    id String @id @default(cuid())
+
+    member   Member @relation(fields: [memberId], references: [id])
+    memberId String
+
+    createdAt DateTime @default(now())
+}
